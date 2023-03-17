@@ -1,0 +1,194 @@
+object MainForm: TMainForm
+  Left = 478
+  Height = 480
+  Top = 114
+  Width = 640
+  Caption = 'Radio Emmiter'
+  ClientHeight = 480
+  ClientWidth = 640
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  LCLVersion = '2.2.4.0'
+  object LogMemo: TMemo
+    Left = 0
+    Height = 129
+    Top = 351
+    Width = 640
+    Align = alBottom
+    ScrollBars = ssAutoBoth
+    TabOrder = 0
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 351
+    Top = 0
+    Width = 640
+    Align = alClient
+    ClientHeight = 351
+    ClientWidth = 640
+    TabOrder = 1
+    object Panel2: TPanel
+      Left = 277
+      Height = 349
+      Top = 1
+      Width = 362
+      Align = alClient
+      ClientHeight = 349
+      ClientWidth = 362
+      TabOrder = 0
+      object ToolBar2: TToolBar
+        Left = 1
+        Top = 1
+        Width = 360
+        ButtonHeight = 32
+        ButtonWidth = 32
+        Caption = 'ToolBar2'
+        EdgeInner = esNone
+        EdgeOuter = esNone
+        Images = ImageList1
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 0
+        object AddTrackBtn: TToolButton
+          Left = 1
+          Hint = 'Add Track'
+          Top = 0
+          Caption = 'AddTrackBtn'
+          ImageIndex = 2
+          OnClick = AddTrackBtnClick
+          ParentShowHint = False
+          ShowHint = True
+        end
+        object DeleteTrackBtn: TToolButton
+          Left = 33
+          Hint = 'Delete Track'
+          Top = 0
+          Caption = 'DeleteTrackBtn'
+          ImageIndex = 3
+          OnClick = DeleteTrackBtnClick
+          ParentShowHint = False
+          ShowHint = True
+        end
+        object PlayButton: TToolButton
+          Left = 65
+          Hint = 'Play'
+          Top = 0
+          Caption = 'PlayButton'
+          ImageIndex = 4
+          OnClick = PlayButtonClick
+          ParentShowHint = False
+          ShowHint = True
+        end
+        object StopButton: TToolButton
+          Left = 97
+          Hint = 'Stop'
+          Top = 0
+          Caption = 'StopButton'
+          ImageIndex = 6
+          OnClick = StopButtonClick
+          ParentShowHint = False
+          ShowHint = True
+        end
+      end
+    end
+    object Splitter1: TSplitter
+      Left = 272
+      Height = 349
+      Top = 1
+      Width = 5
+    end
+    object Panel8: TPanel
+      Left = 1
+      Height = 349
+      Top = 1
+      Width = 271
+      Align = alLeft
+      ClientHeight = 349
+      ClientWidth = 271
+      TabOrder = 1
+      object ToolBar1: TToolBar
+        Left = 1
+        Top = 1
+        Width = 269
+        ButtonHeight = 32
+        ButtonWidth = 32
+        Caption = 'ToolBar1'
+        EdgeInner = esNone
+        EdgeOuter = esNone
+        Images = ImageList1
+        ShowCaptions = True
+        TabOrder = 0
+        object AuthToServerBtn: TToolButton
+          Left = 1
+          Hint = 'Connect'
+          Top = 0
+          ImageIndex = 1
+          OnClick = AuthToServerBtnClick
+          ParentShowHint = False
+          ShowHint = True
+        end
+      end
+    end
+  end
+  object Timer1: TTimer
+    Enabled = False
+    Interval = 480
+    OnTimer = Timer1Timer
+    Left = 216
+    Top = 168
+  end
+  object TaskTimer: TTimer
+    Enabled = False
+    Interval = 500
+    OnTimer = TaskTimerTimer
+    Left = 144
+    Top = 168
+  end
+  object ImageList1: TImageList
+    Left = 288
+    Top = 168
+    Bitmap = {
+      4C7A070000001000000010000000650400000000000078DAED960D4C94751CC7
+      9F68A49359498956B496A6017782405C5C6172C7AE39DF46A4D92A9449996376
+      3320A5170B6616464DD2065294444542D0BB5B656DBD6D574CD78C36A366AB1C
+      2F0D2EC2AD51917EFB7F1FEE61E7C3FF9E7B79665D8EFFF61DB7DFFFF7E1F7FB
+      FF5E76A72867CF59BC78D8E574F660E1C22187DEEE70FC80B4B4BE3C239EECA2
+      45BF203BBB0FC9C943B9B4D9EDBFE5E5E6F608DBF7C8CAFA1A463CE392CDC818
+      4066E6202C96A1CA9C9C3ED86C8CFD0DE6CD3BEA0AF606C6259B96E615EF1844
+      7A7A0F162CE8C6FCF9C7F242AD03E3A6A70FC26A1D1039F48AB7782B4365F95E
+      E6CCB8645352FA858E8FD72358FD592BBE9739332E598BA507A9A9C79094D4EF
+      30E2D923D699B5D2DECBB864ADD66F85FD8861FDD95FF6485F67C6251B4AFD27
+      8FF933ED5645B9708732C55FB4857AE86F5F63C78AADCB54F1336DE1F0E46A8E
+      EE54C5CF679A8FB5AA5C2CFD66BEA59CAFE769F3D52296BEFA33D5A99C9B543D
+      BB29AB2013CB4A97A0A87EDD38CFCFB4F18E3EF495F0E75CFE714CD635DBE61E
+      2F692A1E6735D1C63BFAD03750DFC4BD2DA572D697F4DFD9F5982A7EA68D77C1
+      FA38DDADC4D04FCBA3ECEDCD5A5C1BEF429D1FFA5B1E99F5C5D58F273433E760
+      71FDEB4FCDF628D30477ADF83B5D68AADF2C06AE7FE915AFEFEEAE8591E813A0
+      FE2AAFCD6C2005E2F5F91B489A7FA4074094E96FA111E589F52EF88BB6B1BB60
+      FCA8D00995EF3FFC9EAA31FE84B0FFE5F33915202ED9DF85BC127EC077F76780
+      3C4694B118F4EB95F0BDBEBB619FEFE9BCFEBD7A7E623D26F29A7F309D29DE4C
+      FEC01FBEFA790DEAE7F5F98C98E8DF689039329A9F51D3F37B32EAF62D6AF7FF
+      3445B0FFCA57ED35AAC6F8B0F75FC787BDFF3A3EFCFD37D2FF61FFC3C95FB2FF
+      92FA85B5FF01FA17F2FE4BE667D4F4FC46DBFE073A4BEDA9AB1313E21323FD5D
+      D1BAE566BC59EDF644CAD7165E879736AF44C78E12CF653367849D474B593E3A
+      EBCAF16AD94D68ADDA10761E1DF7AF010EB561F0FD3AECBFAF002D0F177B2EBD
+      38F43C347EEC7FD483F9343F50E48984A7BC1FEC45DB965568AA28F45C72D105
+      89E1F2D4AF071BD47AECDB7A87E7DFE6CDE46FA67E91F64F9B9FFDE50511CD8F
+      D9F935BB3F91ECEF550971D9B62B67ACD6141F179B6864D79F7BF2E6B4FDD4B6
+      1DD4E13D1B415F23BB8CD77A4E5F7F5E669FE427F9B38D37B33F66F7F7BF3C0F
+      2E4D46A33B1F8D9B96A3B164099EBBDB8586BB9CA85B9F8B678A6EC0D385D763
+      D7ED7654ADB0606EFC9409EF278BEF3E01BADEC5A943AF61E4B31731FCD1B3E8
+      3FB0073FBFF124BA5B1E45D7BE6D68AFB845CE8BB8644F76B6AAECD0870D2AFB
+      63478DCA1E79E12174D697ABDF43525EE46C1497ECE7B56E34BB974B79BED728
+      EEA7BB36E160F506346EBC51CAB3564671C91EA85A87BD773AA53CEB6C14F79D
+      CAB56817DFA9BBD7E64879F6C8282ED9574AF3F1D46DD9529EFD358AFBF2BD2B
+      F1BCA871F5AA0C29CFD9308A4BB6AED881EDF9A9529E73C5D9507F67881EB1CE
+      AC15DFCB9C19976C856B8E94A72D54C59D171335FBF70FE9AD5B9F
+    }
+  end
+  object OpenDialog1: TOpenDialog
+    Filter = 'Audio Files|*.opus;*.flac;*.ogg;*.wav;*.oga'
+    Left = 360
+    Top = 168
+  end
+end

@@ -1,0 +1,326 @@
+object Form1: TForm1
+  Left = 435
+  Height = 437
+  Top = 171
+  Width = 612
+  BorderStyle = bsDialog
+  Caption = 'Radio Listener'
+  ClientHeight = 437
+  ClientWidth = 612
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  LCLVersion = '2.2.4.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 437
+    Top = 0
+    Width = 612
+    Align = alClient
+    BevelOuter = bvNone
+    ClientHeight = 437
+    ClientWidth = 612
+    TabOrder = 0
+    object Panel2: TPanel
+      Left = 0
+      Height = 256
+      Top = 0
+      Width = 242
+      Align = alLeft
+      ClientHeight = 256
+      ClientWidth = 242
+      TabOrder = 0
+      object ToolBar1: TToolBar
+        Left = 1
+        Top = 1
+        Width = 240
+        ButtonHeight = 32
+        ButtonWidth = 32
+        Caption = 'ToolBar1'
+        EdgeInner = esNone
+        EdgeOuter = esNone
+        Images = ImageList1
+        ShowCaptions = True
+        TabOrder = 0
+        object AuthToServerBtn: TToolButton
+          Left = 1
+          Hint = 'Connect'
+          Top = 0
+          ImageIndex = 4
+          OnClick = AuthToServerBtnClick
+          ParentShowHint = False
+          ShowHint = True
+        end
+      end
+    end
+    object Splitter1: TSplitter
+      Left = 242
+      Height = 256
+      Top = 0
+      Width = 5
+    end
+    object Panel3: TPanel
+      Left = 247
+      Height = 256
+      Top = 0
+      Width = 365
+      Align = alClient
+      ClientHeight = 256
+      ClientWidth = 365
+      TabOrder = 2
+      object DeviceList: TListBox
+        Left = 1
+        Height = 151
+        Top = 33
+        Width = 363
+        Align = alClient
+        ItemHeight = 0
+        OnDblClick = DeviceListDblClick
+        OnDrawItem = DeviceListDrawItem
+        Style = lbOwnerDrawFixed
+        TabOrder = 0
+        TopIndex = -1
+      end
+      object ToolBar2: TToolBar
+        Left = 1
+        Top = 1
+        Width = 363
+        ButtonHeight = 32
+        ButtonWidth = 32
+        Caption = 'ToolBar2'
+        EdgeInner = esNone
+        EdgeOuter = esNone
+        Images = ImageList1
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 1
+        object PlayButton: TToolButton
+          Left = 1
+          Hint = 'Play'
+          Top = 0
+          Caption = 'PlayButton'
+          ImageIndex = 2
+          OnClick = PlayButtonClick
+          ParentShowHint = False
+          ShowHint = True
+        end
+      end
+      object Panel6: TPanel
+        Left = 1
+        Height = 71
+        Top = 184
+        Width = 363
+        Align = alBottom
+        BevelOuter = bvNone
+        ClientHeight = 71
+        ClientWidth = 363
+        TabOrder = 2
+        object Panel7: TPanel
+          Left = 0
+          Height = 71
+          Top = 0
+          Width = 112
+          Align = alLeft
+          BevelOuter = bvNone
+          ClientHeight = 71
+          ClientWidth = 112
+          TabOrder = 0
+          object Label2: TLabel
+            Left = 2
+            Height = 19
+            Top = 2
+            Width = 108
+            Align = alTop
+            Alignment = taCenter
+            BorderSpacing.Around = 2
+            Caption = 'Frames Loaded'
+            ParentColor = False
+          end
+          object FrameLoadedLabel: TLabel
+            Left = 0
+            Height = 1
+            Top = 70
+            Width = 112
+            Align = alBottom
+            Alignment = taCenter
+            Font.Height = -27
+            ParentColor = False
+            ParentFont = False
+          end
+        end
+        object Panel8: TPanel
+          Left = 112
+          Height = 71
+          Top = 0
+          Width = 112
+          Align = alLeft
+          BevelOuter = bvNone
+          ClientHeight = 71
+          ClientWidth = 112
+          TabOrder = 1
+          object Label4: TLabel
+            Left = 2
+            Height = 19
+            Top = 2
+            Width = 108
+            Align = alTop
+            Alignment = taCenter
+            BorderSpacing.Around = 2
+            Caption = 'Time Decoded'
+            ParentColor = False
+          end
+          object FrameDecodedLabel: TLabel
+            Left = 0
+            Height = 1
+            Top = 70
+            Width = 112
+            Align = alBottom
+            Alignment = taCenter
+            Font.Height = -27
+            ParentColor = False
+            ParentFont = False
+          end
+        end
+        object Panel9: TPanel
+          Left = 224
+          Height = 71
+          Top = 0
+          Width = 112
+          Align = alLeft
+          BevelOuter = bvNone
+          ClientHeight = 71
+          ClientWidth = 112
+          TabOrder = 2
+          object Label6: TLabel
+            Left = 2
+            Height = 19
+            Top = 2
+            Width = 108
+            Align = alTop
+            Alignment = taCenter
+            BorderSpacing.Around = 2
+            Caption = 'Time cached'
+            ParentColor = False
+          end
+          object TimeCachedLabel: TLabel
+            Left = 0
+            Height = 1
+            Top = 70
+            Width = 112
+            Align = alBottom
+            Alignment = taCenter
+            Font.Height = -27
+            ParentColor = False
+            ParentFont = False
+          end
+        end
+      end
+    end
+    object Panel4: TPanel
+      Left = 0
+      Height = 181
+      Top = 256
+      Width = 612
+      Align = alBottom
+      ClientHeight = 181
+      ClientWidth = 612
+      TabOrder = 3
+      object LogMemo: TMemo
+        Left = 1
+        Height = 179
+        Top = 1
+        Width = 274
+        Align = alClient
+        Lines.Strings = (
+          'LogMemo'
+        )
+        ScrollBars = ssAutoBoth
+        TabOrder = 0
+      end
+      object Panel5: TPanel
+        Left = 280
+        Height = 179
+        Top = 1
+        Width = 331
+        Align = alRight
+        ClientHeight = 179
+        ClientWidth = 331
+        TabOrder = 1
+        object Label1: TLabel
+          Left = 1
+          Height = 19
+          Top = 1
+          Width = 329
+          Align = alTop
+          Caption = 'Current Track'
+          ParentColor = False
+        end
+      end
+      object Splitter2: TSplitter
+        Left = 275
+        Height = 179
+        Top = 1
+        Width = 5
+        Align = alRight
+        ResizeAnchor = akRight
+      end
+    end
+  end
+  object TaskTimer: TTimer
+    Enabled = False
+    Interval = 120
+    OnTimer = TaskTimerTimer
+    Left = 328
+    Top = 88
+  end
+  object Timer1: TTimer
+    Enabled = False
+    OnTimer = Timer1Timer
+    Left = 384
+    Top = 88
+  end
+  object SlowTimer: TTimer
+    Enabled = False
+    Interval = 3000
+    OnTimer = SlowTimerTimer
+    Left = 264
+    Top = 88
+  end
+  object ImageList1: TImageList
+    Left = 440
+    Top = 88
+    Bitmap = {
+      4C7A050000001000000010000000E50300000000000078DAED946B4C54571485
+      AF18D468D4D656B08A6D226A811941A04C998ACA0CC118458328B5B1E591521F
+      2166A240151F28A43E30D6808FF050544445B1D0D6B6FE50DB446D9369894DAA
+      34A168688C04A111447FF9AB5DDDEB9621647AE732732735D1F4242B73B3CFF9
+      D8FBACBD0F8AF2E2ACF9F39F24DBED9D983DBBCFE61EB7D97E47545457921E4F
+      76EEDC3F101FDF85F0F0BE44C6ACD6C74989899D12BB8BB8B8DBD0E399976C4C
+      CC43C4C6F6C064EA2B4E48E882C5C2DCBF62C68CD6E4A1EEC0BC64A3A27AE51E
+      3D888EEEC4AC596D9839B33DC95B1F98373ABA0766F343A9E181DCA5B7D85B96
+      F765CDCC4B3622A25BD431E0C750FED32BDE9735332F5993A9139191ED080BEB
+      B6E9F1EC117DA657AEFB322F59B3F93789DFD2F59FFD658FDC7D665EB2DEF8FF
+      FF7A6E5790A85A6431C8BF2EE27CB589DA457B3952067877B58AF8FE220CF2D4
+      015187E817D156D1741FF9C1AAECFF4D31C8DF17DD10997DE0AB448F4427743C
+      D5E22F8B1E888AFAFBEB8B7F3F8B3245237CEC5F93689E81F919239AF6A23CA6
+      45D6C8F490A0092146F9864DCBF165A9C369942FCF7807A7372C45D3EE5CE794
+      892FFB5C477D7E2A9A2B0A702E7F191A4AD6F85C47D39695C0CD0BE8B95C81F3
+      1FA7A17E478E73F2ABDED7E1E2FFF91B95603D755BB39D4678AAF74A152E6C5A
+      81DAC20CE76BAF8C0FF195A71E5DAD56FD38B9F903E7B3E6FDA9DF1FFF8CF6CF
+      353FE70BD20CCD8FBFF3EBEFFBF1F7FD3EEBB56D51386A1CA9A8599F829ADC85
+      38B63619D5ABEDA8F8301147B2E7E160C61C94BD6F45C9121342278C4C77E7C9
+      E2CE75A0E51BFC75F3333CFDFE149E7C7714DD970EE3FE179FA2AD7E175A4E16
+      A1B1F05D6D5EF292FDB3B94165FBBEAD56D97B4DFB55F6D689ED68AE2C50E750
+      93979AF5F292FDA1DC813A478A26CFFBEAE5BD51B61E574BD7A066DD024D9E5E
+      E9E5257BA9240B551FD93579FAAC97F7EBE24C34CA9B3A9499A0C9B3477A79C9
+      9ECD4BC58155F19A3CFBAB97F7CCC6A5382E1E97AE88D1E4391B7A79C956E4D8
+      F0496AA426CFB9E26CA8FF67A447F4995EF1BEAC9979C916264FD3E419F35663
+      46043C37EFD2C81AFD9EA2BCB45B1939588C79BB78DEBAD28A259B17ABE23763
+      BEF0E4F6B7EE53C5EFFF9A0F34AB5C20CF4DBCA88C73E719EBF72230D0FC6F7E
+      945D191E563AA9362E2D168BF31622BB326B80E73763DCE3199ED5E0874DBD16
+      10F7565168476E6DCE00EB1263DCE3199EF5D437D9B7441407FFC4F3FB5AF6A8
+      E23763DC1BAA8F631D4A00CFB9EAC8FF6A832BAF857BDECE0FCF9B7606FFF8E6
+      DEA03AD63C54DEC1FE53939CCA68E1DE96DFB1A2518366D1B3FF796F7C7EA8AD
+      1C7AE2190FFEABBC6B663DC913EF5EBF8E34EB37BAFE06EAC698C0
+    }
+  end
+end
