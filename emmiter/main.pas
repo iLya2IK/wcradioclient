@@ -54,7 +54,6 @@ type
     procedure AddTrackBtnClick(Sender : TObject);
     procedure AuthToServerBtnClick(Sender : TObject);
     procedure DeleteTrackBtnClick(Sender : TObject);
-    procedure DisconnectBtnClick(Sender : TObject);
     procedure FormCreate(Sender : TObject);
     procedure FormDestroy(Sender : TObject);
     procedure PlayButtonClick(Sender : TObject);
@@ -248,14 +247,16 @@ begin
     StopStreaming;
 end;
 
-procedure TMainForm.DisconnectBtnClick(Sender : TObject);
-begin
-  CURLClient.Disconnect;
-end;
-
 procedure TMainForm.AuthToServerBtnClick(Sender : TObject);
 begin
-  CURLClient.Authorize(AuthOpts.UserName, AuthOpts.Password);
+  if CURLClient.Connected then
+  begin
+    CURLClient.Disconnect;
+  end else
+  begin
+    CURLClient.Authorize(AuthOpts.UserName, AuthOpts.Password);
+    TaskTimer.Enabled := True;
+  end;
 end;
 
 procedure TMainForm.AddTrackBtnClick(Sender : TObject);

@@ -121,7 +121,10 @@ procedure TForm1.AuthToServerBtnClick(Sender : TObject);
 begin
   if CURLClient.Connected then
     CURLClient.Disconnect else
+  begin
     CURLClient.Authorize(AuthOpts.UserName, AuthOpts.Password);
+    TaskTimer.Enabled := true;
+  end;
 end;
 
 procedure TForm1.DeviceListDblClick(Sender : TObject);
@@ -341,13 +344,13 @@ begin
 
     DeviceList.Enabled := false;
     SlowTimer.Enabled := false;
-    Timer1.Enabled := false;
-    TaskTimer.Enabled := false;
   end;
 end;
 
 procedure TForm1.OnDisconnect(Sender : TObject);
 begin
+  Timer1.Enabled := False;
+  TaskTimer.Enabled := False;
   OnConnectedChanged(False);
 end;
 
